@@ -1,0 +1,21 @@
+# trainer
+trainer_type: llm
+classifier_type: mlp # mlp, rnn, lstm, bilstm
+feature_extractor: cls # sequence, mean, cls
+dtype: bfloat16
+
+# data
+data_path: /data/tbsi/intern/dizs/fraud_detect/tele_fraud_data/data/split-data/fraud-v3-classify/fraud-detect-v3-people-dsv3-same-test.csv
+test_data_path: /data/tbsi/intern/dizs/fraud_detect/tele_fraud_data/data/classify/test_data_20250512.csv
+
+# model
+model_name_or_path: /data/tbsi/intern/dizs/fraud_detect/Qwen3-4B
+tokenizer_name_or_path: /data/tbsi/intern/dizs/fraud_detect/Qwen3-4B
+batch_size: 8
+epochs: 1
+hidden_size: 4096
+learning_rate: 2.778840731785898e-05
+max_length: 4096
+num_labels: 2
+output_dir: ./logs/qwen3_fraud_detect-v3-4096
+test_ratio: 0.2

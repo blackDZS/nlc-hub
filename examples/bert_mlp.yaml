@@ -1,0 +1,19 @@
+# trainer
+trainer_type: static_vector
+classifier_type: mlp
+dtype: bfloat16
+
+# data
+data_path: /data/tbsi/intern/dizs/fraud_detect/tele_fraud_data/data/split-data/fraud-v3-classify/fraud-detect-v3-people-dsv3-same-test.csv
+test_data_path: /data/tbsi/intern/dizs/fraud_detect/tele_fraud_data/data/classify/test_data_20250512.csv
+
+# model
+model_name_or_path: bert-base-chinese
+tokenizer_name_or_path: bert-base-chinese
+batch_size: 8
+epochs: 1
+learning_rate: 2.e-5
+max_length: 512
+num_labels: 2
+output_dir: ./logs/bert_model/bert-v1
+test_ratio: 0.2
